@@ -27,7 +27,8 @@ export abstract class Controller<T extends IIdentifiedEntity> implements IContro
         let objectSend : any;
         let statusCode : number;
         try{
-            objectSend = this.service.getById(req.params.id);
+            this.service.getById(req.params.id);
+            objectSend = {"message" : "Deleted"}
             statusCode = 200;
         }
         catch(e : any){
